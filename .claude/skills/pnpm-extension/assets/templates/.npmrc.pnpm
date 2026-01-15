@@ -1,0 +1,117 @@
+# pnpm-specific .npmrc configuration
+# Place in project root
+
+# ============================================
+# STORE & LINKING
+# ============================================
+
+# Store directory location (default: ~/.local/share/pnpm/store)
+# store-dir=/path/to/pnpm-store
+
+# Node linker strategy
+# - isolated (default): Creates isolated node_modules
+# - hoisted: Creates flat node_modules (npm-like)
+# - pnp: Plug'n'Play (experimental)
+node-linker=isolated
+
+# ============================================
+# HOISTING BEHAVIOR
+# ============================================
+
+# Hoist all dependencies to root node_modules (not recommended)
+shamefully-hoist=false
+
+# Public hoist pattern (packages that need to be hoisted)
+# public-hoist-pattern[]=*eslint*
+# public-hoist-pattern[]=*prettier*
+
+# Hoist pattern (internal hoisting)
+# hoist-pattern[]=*
+
+# ============================================
+# PEER DEPENDENCIES
+# ============================================
+
+# Strict peer dependencies (fail on missing peers)
+strict-peer-dependencies=false
+
+# Auto-install peer dependencies
+auto-install-peers=true
+
+# ============================================
+# LOCKFILE
+# ============================================
+
+# Lockfile format version
+lockfile=true
+
+# Lockfile only (no node_modules)
+# lockfile-only=false
+
+# Prefer frozen lockfile
+prefer-frozen-lockfile=true
+
+# ============================================
+# INSTALLATION BEHAVIOR
+# ============================================
+
+# Prefer offline mode
+prefer-offline=false
+
+# Recursive install
+recursive-install=true
+
+# Enable side effects cache (for native modules)
+side-effects-cache=true
+
+# ============================================
+# WORKSPACE
+# ============================================
+
+# Link workspace packages
+link-workspace-packages=true
+
+# Prefer workspace packages
+prefer-workspace-packages=false
+
+# Save workspace protocol (workspace:*)
+save-workspace-protocol=rolling
+
+# ============================================
+# REGISTRY
+# ============================================
+
+# Default registry
+registry=https://registry.npmjs.org/
+
+# Scoped registries
+# @myorg:registry=https://npm.pkg.github.com/
+
+# ============================================
+# SCRIPTS
+# ============================================
+
+# Enable pre/post scripts
+enable-pre-post-scripts=true
+
+# Ignore scripts
+ignore-scripts=false
+
+# ============================================
+# UPDATES & VERIFICATION
+# ============================================
+
+# Resolution mode
+# - highest: Use highest version
+# - time-based: Use version available at package publish time
+# - lowest-direct: Use lowest version for direct dependencies
+resolution-mode=highest
+
+# Use lockfile v6 format
+use-lockfile-v6=true
+
+# ============================================
+# ONLY ALLOW PNPM (prevent npm/yarn usage)
+# ============================================
+# Add to package.json scripts:
+# "preinstall": "npx only-allow pnpm"

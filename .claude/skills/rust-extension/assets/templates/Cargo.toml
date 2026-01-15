@@ -1,0 +1,171 @@
+# Cargo.toml - Rust Package Manifest Template
+
+[package]
+name = "my-package"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.70"
+authors = ["Your Name <your.email@example.com>"]
+description = "A brief description of what this crate does"
+documentation = "https://docs.rs/my-package"
+readme = "README.md"
+homepage = "https://github.com/username/my-package"
+repository = "https://github.com/username/my-package"
+license = "MIT OR Apache-2.0"
+keywords = ["keyword1", "keyword2", "keyword3"]
+categories = ["development-tools", "command-line-utilities"]
+exclude = [".github/", "tests/", "benches/"]
+
+# ============================================
+# BINARIES
+# ============================================
+
+[[bin]]
+name = "my-cli"
+path = "src/bin/cli.rs"
+
+# Additional binary
+# [[bin]]
+# name = "another-binary"
+# path = "src/bin/another.rs"
+
+# ============================================
+# LIBRARY
+# ============================================
+
+[lib]
+name = "my_package"
+path = "src/lib.rs"
+# crate-type = ["cdylib", "rlib"]  # For FFI/WASM
+
+# ============================================
+# DEPENDENCIES
+# ============================================
+
+[dependencies]
+# Async runtime
+tokio = { version = "1.0", features = ["full"] }
+
+# Serialization
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+
+# Error handling
+thiserror = "1.0"
+anyhow = "1.0"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# CLI argument parsing
+clap = { version = "4.0", features = ["derive"] }
+
+# HTTP client
+# reqwest = { version = "0.11", features = ["json"] }
+
+# Database
+# sqlx = { version = "0.7", features = ["runtime-tokio", "postgres"] }
+
+# ============================================
+# DEV DEPENDENCIES
+# ============================================
+
+[dev-dependencies]
+# Testing
+tokio-test = "0.4"
+pretty_assertions = "1.0"
+mockall = "0.12"
+
+# Property testing
+proptest = "1.0"
+
+# Benchmarking
+criterion = { version = "0.5", features = ["html_reports"] }
+
+# ============================================
+# BUILD DEPENDENCIES
+# ============================================
+
+[build-dependencies]
+# build.rs dependencies if needed
+# vergen = { version = "8.0", features = ["build", "git", "gitcl"] }
+
+# ============================================
+# FEATURES
+# ============================================
+
+[features]
+default = []
+full = ["feature1", "feature2"]
+feature1 = []
+feature2 = ["dep:optional-dep"]
+
+# ============================================
+# OPTIONAL DEPENDENCIES
+# ============================================
+
+[dependencies.optional-dep]
+version = "1.0"
+optional = true
+
+# ============================================
+# PROFILES
+# ============================================
+
+[profile.dev]
+opt-level = 0
+debug = true
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[profile.bench]
+opt-level = 3
+debug = false
+
+# ============================================
+# WORKSPACE (for monorepos)
+# ============================================
+
+# [workspace]
+# members = [
+#     "crates/*",
+# ]
+# resolver = "2"
+
+# ============================================
+# PACKAGE METADATA
+# ============================================
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+# ============================================
+# BENCHMARKS
+# ============================================
+
+[[bench]]
+name = "my_benchmark"
+harness = false
+
+# ============================================
+# EXAMPLES
+# ============================================
+
+[[example]]
+name = "basic_usage"
+path = "examples/basic.rs"
+
+# ============================================
+# TESTS
+# ============================================
+
+[[test]]
+name = "integration_tests"
+path = "tests/integration.rs"
