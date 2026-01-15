@@ -1,0 +1,79 @@
+# bunfig.toml - Bun Configuration File
+# Place this file in project root
+
+# ============================================
+# INSTALL SETTINGS
+# ============================================
+
+[install]
+# Registry URL (default: https://registry.npmjs.org)
+# registry = "https://registry.npmjs.org"
+
+# Scoped registry (for private packages)
+# [install.scopes]
+# "@myorg" = { token = "$NPM_TOKEN", url = "https://npm.pkg.github.com" }
+
+# Cache directory
+# cache = "~/.bun/install/cache"
+
+# Save dev dependencies to devDependencies
+# production = false
+
+# Frozen lockfile (fail if lockfile is out of date)
+# frozenLockfile = true
+
+# ============================================
+# TEST SETTINGS
+# ============================================
+
+[test]
+# Test file patterns
+# root = "./tests"
+
+# Timeout per test (ms)
+timeout = 5000
+
+# Enable coverage
+coverage = false
+
+# Coverage threshold
+# coverageThreshold = { line = 80 }
+
+# Preload scripts before tests
+# preload = ["./tests/setup.ts"]
+
+# ============================================
+# RUN/DEV SETTINGS
+# ============================================
+
+[run]
+# Preload scripts before running
+# preload = ["./src/setup.ts"]
+
+# Shell to use for scripts
+# shell = "/bin/bash"
+
+# ============================================
+# BUILD SETTINGS
+# ============================================
+
+# [bundle]
+# entryPoints = ["./src/index.ts"]
+# outdir = "./dist"
+# target = "browser"
+# minify = true
+# sourcemap = "external"
+
+# ============================================
+# DEVELOPMENT SERVER
+# ============================================
+
+# [serve]
+# port = 3000
+# hostname = "localhost"
+
+# ============================================
+# LOGGING
+# ============================================
+
+# logLevel = "debug"  # "debug" | "info" | "warn" | "error"

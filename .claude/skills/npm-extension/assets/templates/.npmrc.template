@@ -1,0 +1,99 @@
+# npm Configuration File Template
+# Place this file in project root as .npmrc
+
+# ============================================
+# REGISTRY CONFIGURATION
+# ============================================
+
+# Default registry
+registry=https://registry.npmjs.org/
+
+# Scoped registry (for private packages)
+# @myorg:registry=https://npm.pkg.github.com/
+# @company:registry=https://registry.company.com/
+
+# ============================================
+# AUTHENTICATION
+# ============================================
+
+# Auth token (for CI/CD, use environment variables instead)
+# //registry.npmjs.org/:_authToken=${NPM_TOKEN}
+
+# GitHub Packages auth
+# //npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}
+
+# ============================================
+# INSTALL BEHAVIOR
+# ============================================
+
+# Save exact versions
+save-exact=false
+
+# Save prefix (default is ^)
+save-prefix=^
+
+# Don't generate package-lock.json
+# package-lock=false
+
+# Engine strict mode
+engine-strict=true
+
+# ============================================
+# VERSION & DEFAULTS
+# ============================================
+
+# Default author
+init-author-name=Your Name
+init-author-email=your.email@example.com
+init-author-url=https://yourwebsite.com
+
+# Default license
+init-license=MIT
+
+# Default version
+init-version=1.0.0
+
+# ============================================
+# SECURITY
+# ============================================
+
+# Audit level (info, low, moderate, high, critical)
+audit-level=moderate
+
+# Fund messages
+fund=false
+
+# ============================================
+# SCRIPTS
+# ============================================
+
+# Ignore scripts (security feature)
+# ignore-scripts=true
+
+# Script shell
+# script-shell=/bin/bash
+
+# ============================================
+# CACHE & PERFORMANCE
+# ============================================
+
+# Cache location
+# cache=/path/to/cache
+
+# Prefer offline mode
+# prefer-offline=true
+
+# ============================================
+# PROXY (if behind corporate proxy)
+# ============================================
+
+# proxy=http://proxy.company.com:8080
+# https-proxy=http://proxy.company.com:8080
+# noproxy=localhost,127.0.0.1
+
+# ============================================
+# LOGGING
+# ============================================
+
+# Log level (silent, error, warn, notice, http, timing, info, verbose, silly)
+loglevel=warn

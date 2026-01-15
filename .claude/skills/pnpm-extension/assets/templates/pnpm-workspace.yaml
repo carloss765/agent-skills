@@ -1,0 +1,44 @@
+# pnpm Workspace Configuration
+# This file defines which directories are included in the monorepo workspace
+
+packages:
+  # Include all packages in the packages directory
+  - 'packages/*'
+
+  # Include all apps in the apps directory
+  - 'apps/*'
+
+  # Include specific directories
+  - 'libs/*'
+  - 'tools/*'
+
+  # Exclude certain directories (use ! prefix)
+  # - '!**/test/**'
+
+  # Include nested packages
+  # - 'packages/**'
+
+# Examples of common monorepo structures:
+
+# Simple structure:
+# packages:
+#   - 'packages/*'
+
+# Apps and packages:
+# packages:
+#   - 'apps/*'
+#   - 'packages/*'
+
+# Domain-based:
+# packages:
+#   - 'packages/core/*'
+#   - 'packages/ui/*'
+#   - 'packages/utils/*'
+#   - 'apps/*'
+
+# With shared and services:
+# packages:
+#   - 'packages/shared/*'
+#   - 'packages/services/*'
+#   - 'packages/ui/*'
+#   - 'apps/*'
